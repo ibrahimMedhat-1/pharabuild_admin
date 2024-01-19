@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -18,7 +20,7 @@ class CreatePharmacyCubit extends Cubit<CreatePharmacyState> {
   static CreatePharmacyCubit get(context) => BlocProvider.of(context);
   String? pharmacyId;
   String? imageLink;
-  late final XFile? imageFile;
+  XFile? imageFile;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController nameController = TextEditingController();
@@ -33,7 +35,14 @@ class CreatePharmacyCubit extends Cubit<CreatePharmacyState> {
       FirebaseFirestore.instance
           .collection('pharmacies')
           .doc(value.user!.uid)
-          .set({'id': value.user!.uid}).then((value) {
+          .set(PharmacyModel(
+            '',
+            '',
+            value.user!.uid,
+            '',
+            '',
+          ).toMap())
+          .then((value) {
         Navigator.pushReplacement(
             context,
             NavigateSlideTransition(
@@ -49,16 +58,30 @@ class CreatePharmacyCubit extends Cubit<CreatePharmacyState> {
     imageFile = await ImagePicker().pickImage(source: ImageSource.gallery);
   }
 
-  void addPharmacyData() async {
+  void addPharmacyData(context) async {
     if (imageFile != null) {
-      FirebaseStorage.instance.ref();
+      await FirebaseStorage.instance
+          .ref()
+          .child('pharmacies/$pharmacyId')
+          .putFile(File(imageFile!.path))
+          .then((p0) async {
+        await p0.ref.getDownloadURL().then((value) {
+          imageLink = value;
+        });
+      });
     }
-    FirebaseFirestore.instance.collection('pharmacies').doc(pharmacyId).set(PharmacyModel(
+    await FirebaseFirestore.instance
+        .collection('pharmacies')
+        .doc(pharmacyId)
+        .set(PharmacyModel(
           nameController.text,
-          imageLink,
+          imageLink ?? '',
           pharmacyId,
           phoneController.text,
           addressController.text,
-        ).toMap());
+        ).toMap())
+        .then((value) {
+      Navigator.pop(context);
+    });
   }
 }

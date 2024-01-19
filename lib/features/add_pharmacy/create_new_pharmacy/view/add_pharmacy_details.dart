@@ -19,7 +19,9 @@ class AddPharmacyDetails extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      cubit.getPharmacyImage();
+                    },
                     child: const CircleAvatar(
                       radius: 80,
                       child: Align(alignment: Alignment.bottomRight, child: Icon(Icons.edit)),
@@ -40,7 +42,7 @@ class AddPharmacyDetails extends StatelessWidget {
                   const SizedBox(height: 10),
                   ElevatedButton(
                       onPressed: () {
-                        Navigator.pop(context);
+                        cubit.addPharmacyData(context);
                       },
                       child: const Text('Create Pharmacy'))
                 ],

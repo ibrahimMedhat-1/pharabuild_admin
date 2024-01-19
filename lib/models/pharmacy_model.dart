@@ -27,6 +27,7 @@ class PharmacyModel {
         'name': name,
         'phoneNo': phoneNo,
         'address': address,
+        'image': image,
       };
 
   PharmacyModel.fromJson({

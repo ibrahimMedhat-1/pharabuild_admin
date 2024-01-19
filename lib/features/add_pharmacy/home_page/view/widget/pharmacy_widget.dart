@@ -50,8 +50,9 @@ class PharmaciesList extends StatelessWidget {
                       width: double.infinity,
                       child: CachedNetworkImage(
                         fit: BoxFit.fill,
-                        imageUrl: pharmacy(index).image!,
+                        imageUrl: pharmacy(index).image ?? '',
                         placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+                        errorWidget: (context, url, error) => const Icon(Icons.error),
                       ),
                     ),
                   ),
