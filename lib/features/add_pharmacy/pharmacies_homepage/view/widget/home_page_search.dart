@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:ip_admin/features/add_pharmacy/create_new_pharmacy/view/register_pharmacy.dart';
 
 class SearchWidget extends StatelessWidget {
   final TextEditingController controller;
   final Function() search;
+  final Function() addButtonOnPressed;
   final Function(String value) onChange;
 
   const SearchWidget({
     required this.onChange,
     required this.controller,
     required this.search,
+    required this.addButtonOnPressed,
     super.key,
   });
 
@@ -74,10 +75,7 @@ class SearchWidget extends StatelessWidget {
             color: Colors.blue,
           ),
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (builder) => const RegisterPharmacy()),
-            );
+            addButtonOnPressed();
           },
         ),
       ],

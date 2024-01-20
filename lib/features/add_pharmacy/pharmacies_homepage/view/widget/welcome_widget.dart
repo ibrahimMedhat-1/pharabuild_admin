@@ -22,11 +22,10 @@ class WelcomeWidget extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              if (!(Theme.of(context).brightness == Brightness.dark))
-                Image.asset(
-                  ImagesAsset.pharmacyLogo,
-                  scale: 10,
-                ),
+              Image.asset(
+                ImagesAsset.pharmacyLogo,
+                scale: 10,
+              ),
               Text(
                 "Intelligent Pharmacy",
                 style: textTheme.titleLarge!.copyWith(color: Colors.white),

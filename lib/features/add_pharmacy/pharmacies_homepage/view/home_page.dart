@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ip_admin/features/add_pharmacy/home_page/view/widget/home_page_search.dart';
-import 'package:ip_admin/features/add_pharmacy/home_page/view/widget/pharmacy_widget.dart';
-import 'package:ip_admin/features/add_pharmacy/home_page/view/widget/welcome_widget.dart';
+import 'package:ip_admin/features/add_pharmacy/pharmacies_homepage/view/widget/home_page_search.dart';
+import 'package:ip_admin/features/add_pharmacy/pharmacies_homepage/view/widget/pharmacy_widget.dart';
+import 'package:ip_admin/features/add_pharmacy/pharmacies_homepage/view/widget/welcome_widget.dart';
 
+import '../../create_new_pharmacy/view/register_pharmacy.dart';
 import '../manager/home_page_cubit.dart';
 
-class PharmaciesPage extends StatelessWidget {
-  const PharmaciesPage({super.key});
+class PharmaciesHomePage extends StatelessWidget {
+  const PharmaciesHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,12 @@ class PharmaciesPage extends StatelessWidget {
                 expandedHeight: 80,
                 collapsedHeight: 80,
                 flexibleSpace: SearchWidget(
+                  addButtonOnPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (builder) => const RegisterPharmacy()),
+                    );
+                  },
                   controller: cubit.searchPharmacyController,
                   search: () {
                     cubit.searchPharmacies(cubit.searchPharmacyController.text);

@@ -2,9 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ip_admin/features/add_doctor/create_doctor/manager/create_doctor_cubit.dart';
 import 'package:ip_admin/features/add_pharmacy/create_new_pharmacy/manager/create_pharmacy_cubit.dart';
+import 'package:ip_admin/features/authentication/view/login_page.dart';
 import 'package:ip_admin/firebase_options.dart';
-import 'package:ip_admin/layout/view/layout_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,12 +25,13 @@ class MyApp extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => CreatePharmacyCubit(), lazy: true),
+          BlocProvider(create: (context) => CreateDoctorCubit(), lazy: true),
         ],
         child: MaterialApp(
           title: 'Flutter Demo',
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
-            appBarTheme: AppBarTheme(
+            appBarTheme: const AppBarTheme(
               systemOverlayStyle: SystemUiOverlayStyle(
                 statusBarColor: Colors.black87,
               ),
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
           ),
-          home: const Layout(),
+          home: const LoginPage(),
         ),
       ),
     );
