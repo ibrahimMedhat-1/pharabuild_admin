@@ -88,9 +88,9 @@ class CreateDoctorCubit extends Cubit<CreateDoctorState> {
           nameController.text,
           phoneNoController.text,
           {
-            'longitude': '',
-            'latitude': '',
-            'text': addressController.text,
+            'addressLongitude': '',
+            'addressLatitude': '',
+            'address': addressController.text,
           },
           specialityController.text,
           bioController.text,
