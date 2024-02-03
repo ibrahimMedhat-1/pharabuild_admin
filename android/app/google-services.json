@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "813003557226",
+    "project_id": "pharabuild-eec4a",
+    "storage_bucket": "pharabuild-eec4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813003557226:android:6b103439fe435647e7bd13",
+        "android_client_info": {
+          "package_name": "com.example.intelligent_pharmacy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwhYkQKbvappi9VqDCuUhTFw5kBJyro3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813003557226:android:30fa765dcc8268e7e7bd13",
+        "android_client_info": {
+          "package_name": "com.example.ip_admin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwhYkQKbvappi9VqDCuUhTFw5kBJyro3s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
