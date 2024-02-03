@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 import '../../../layout/view/layout_view.dart';
+import '../../add_doctor/doctors_homepage/view/doctors_homepage.dart';
 
 part 'auth_state.dart';
 
@@ -26,7 +27,7 @@ class AuthCubit extends Cubit<AuthState> {
       FirebaseFirestore.instance.collection('admin').doc(value.user!.uid).get().then((value) {
         if (value.data()!['type'] == 'admin') {
           emit(LoginSuccessfully());
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (builder) => const Layout()));
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (builder) => const DoctorsHomePage()));
         } else {
           emit(LoginError());
           Fluttertoast.showToast(msg: 'No Authorization');

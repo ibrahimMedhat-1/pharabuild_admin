@@ -28,7 +28,7 @@ class DoctorListWidget extends StatelessWidget {
         child: Hero(
           tag: doctors[index].id!,
           child: AspectRatio(
-            aspectRatio: 1 / 1.1,
+            aspectRatio: 2.1 / 1.1,
             child: Container(
               width: double.infinity,
               margin: const EdgeInsets.all(20),
@@ -43,48 +43,41 @@ class DoctorListWidget extends StatelessWidget {
                 ],
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: CachedNetworkImage(
-                      fit: BoxFit.fill,
-                      width: double.infinity,
-                      imageUrl: doctors[index].image ?? '',
-                      errorWidget: (context, url, error) => const Icon(
-                        Icons.error,
-                        color: Colors.red,
-                      ),
-                      placeholder: (context, url) => const Center(
-                        child: CircularProgressIndicator(),
-                      ),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+
+                    Text(
+                      doctors[index].name ?? '',
+                      style: Theme.of(context).textTheme.titleLarge!.copyWith(height: 2),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          doctors[index].name ?? '',
-                          style: Theme.of(context).textTheme.titleLarge!.copyWith(height: 2),
-                        ),
-                        Text(
-                          doctors[index].phoneNo ?? '',
-                          style: Theme.of(context).textTheme.titleMedium!.copyWith(height: 2),
-                        ),
-                        Text(
-                          doctors[index].address!['text'] ?? '',
-                          style: Theme.of(context).textTheme.titleSmall!.copyWith(height: 3),
-                        ),
-                        Text(
-                          doctors[index].speciality ?? '',
-                          style: Theme.of(context).textTheme.titleSmall!.copyWith(height: 3),
-                        ),
-                      ],
+                    Text(
+                      doctors[index].phoneNo ?? '',
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(height: 2),
                     ),
-                  ),
-                ],
+                    Text(
+                      doctors[index].speciality ?? '',
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(height: 3),
+                    ),
+                    // Expanded(
+                    //   child: CachedNetworkImage(
+                    //     fit: BoxFit.fill,
+                    //     width: double.infinity,
+                    //     imageUrl: doctors[index].image ?? '',
+                    //     errorWidget: (context, url, error) => const Icon(
+                    //       Icons.error,
+                    //       color: Colors.red,
+                    //     ),
+                    //     placeholder: (context, url) => const Center(
+                    //       child: CircularProgressIndicator(),
+                    //     ),
+                    //   ),
+                    // ),
+
+                  ],
+                ),
               ),
             ),
           ),

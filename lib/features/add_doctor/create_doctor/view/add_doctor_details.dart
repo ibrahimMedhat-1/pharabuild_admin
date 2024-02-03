@@ -18,15 +18,15 @@ class AddDoctorData extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  InkWell(
-                    onTap: () {
-                      cubit.getDoctorImage();
-                    },
-                    child: const CircleAvatar(
-                      radius: 80,
-                      child: Align(alignment: Alignment.bottomRight, child: Icon(Icons.edit)),
-                    ),
-                  ),
+                  // InkWell(
+                  //   onTap: () {
+                  //     cubit.getDoctorImage();
+                  //   },
+                  //   child: const CircleAvatar(
+                  //     radius: 80,
+                  //     child: Align(alignment: Alignment.bottomRight, child: Icon(Icons.edit)),
+                  //   ),
+                  // ),
                   TextFormField(
                     controller: cubit.nameController,
                     decoration: const InputDecoration(label: Text('Name')),
@@ -44,7 +44,7 @@ class AddDoctorData extends StatelessWidget {
                       onPressed: () {
                         cubit.addDoctorData(context);
                       },
-                      child: const Text('Create Doctor'))
+                      child: const Text('Create Contractor'))
                 ],
               ),
             ),

@@ -12,7 +12,7 @@ class RegisterDoctor extends StatelessWidget {
       builder: (context, state) {
         final CreateDoctorCubit cubit = CreateDoctorCubit.get(context);
         return Scaffold(
-          appBar: AppBar(title: const Text('Add Doctor')),
+          appBar: AppBar(title: const Text('Add Contractor')),
           body: Padding(
             padding: const EdgeInsets.all(10),
             child: Column(
@@ -21,13 +21,13 @@ class RegisterDoctor extends StatelessWidget {
                 TextFormField(
                   controller: cubit.emailController,
                   decoration: const InputDecoration(
-                    label: Text('Doctor Email'),
+                    label: Text('Contractor Email'),
                   ),
                 ),
                 TextFormField(
                   controller: cubit.passwordController,
                   decoration: const InputDecoration(
-                    label: Text('Doctor Password'),
+                    label: Text('Contractor Password'),
                   ),
                 ),
                 const SizedBox(height: 10),

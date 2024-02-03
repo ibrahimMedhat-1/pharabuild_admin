@@ -43,14 +43,9 @@ class CreateDoctorCubit extends Cubit<CreateDoctorState> {
               value.user!.uid,
               '',
               '',
-              {
-                'longitude': '',
-                'latitude': '',
-                'text': '',
-              },
+
               '',
-              '',
-              '',
+
             ).toMap(),
           )
           .then((value) {
@@ -87,14 +82,9 @@ class CreateDoctorCubit extends Cubit<CreateDoctorState> {
           doctorId,
           nameController.text,
           phoneNoController.text,
-          {
-            'addressLongitude': '',
-            'addressLatitude': '',
-            'address': addressController.text,
-          },
+
           specialityController.text,
-          bioController.text,
-          imageLink,
+
         ).toMap())
         .then((value) {
       emit(AddDoctorDataSuccessfully());

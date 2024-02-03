@@ -21,7 +21,7 @@ class DoctorsHomePage extends StatelessWidget {
             appBar: AppBar(
               centerTitle: true,
               title: Text(
-                'Doctors',
+                'Contractors',
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       fontSize: 30,
                     ),
