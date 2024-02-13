@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ip_admin/features/add_doctor/create_doctor/view/register_doctor.dart';
 import 'package:ip_admin/features/add_doctor/doctors_homepage/view/widgets/doctor_widget.dart';
-import 'package:ip_admin/features/add_pharmacy/pharmacies_homepage/view/widget/home_page_search.dart';
+import 'package:ip_admin/features/add_doctor/doctors_homepage/view/widgets/home_page_search.dart';
 
 import '../manager/doctor_list_cubit/doctor_list_cubit.dart';
 

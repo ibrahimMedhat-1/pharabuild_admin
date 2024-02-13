@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ip_admin/features/add_doctor/create_doctor/manager/create_doctor_cubit.dart';
-import 'package:ip_admin/features/add_pharmacy/create_new_pharmacy/manager/create_pharmacy_cubit.dart';
 import 'package:ip_admin/features/authentication/view/login_page.dart';
 import 'package:ip_admin/firebase_options.dart';
 
@@ -24,7 +23,6 @@ class MyApp extends StatelessWidget {
       onTap: () => FocusManager.instance.primaryFocus!.unfocus(),
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(create: (context) => CreatePharmacyCubit(), lazy: true),
           BlocProvider(create: (context) => CreateDoctorCubit(), lazy: true),
         ],
         child: MaterialApp(

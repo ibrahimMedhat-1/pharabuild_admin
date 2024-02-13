@@ -39,11 +39,10 @@ class CreateDoctorCubit extends Cubit<CreateDoctorState> {
           .collection('doctors')
           .doc(value.user!.uid)
           .set(
-            DoctorModel(
+            ContractorModel(
               value.user!.uid,
               '',
               '',
-
               '',
 
             ).toMap(),
@@ -78,7 +77,7 @@ class CreateDoctorCubit extends Cubit<CreateDoctorState> {
     await FirebaseFirestore.instance
         .collection('doctors')
         .doc(doctorId)
-        .set(DoctorModel(
+        .set(ContractorModel(
           doctorId,
           nameController.text,
           phoneNoController.text,

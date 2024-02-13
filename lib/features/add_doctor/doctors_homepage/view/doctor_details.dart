@@ -4,10 +4,9 @@ import 'package:ip_admin/features/add_doctor/doctors_homepage/manager/doctor_lis
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../models/doctor_model.dart';
-import '../../../add_pharmacy/pharmacy_details/view/widgets/pharmacy_details_widget/top_image.dart';
 
 class DoctorDetails extends StatelessWidget {
-  final DoctorModel doctorModel;
+  final ContractorModel doctorModel;
 
   const DoctorDetails({super.key, required this.doctorModel});
 

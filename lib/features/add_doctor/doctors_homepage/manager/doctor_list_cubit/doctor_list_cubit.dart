@@ -14,8 +14,8 @@ class DoctorListCubit extends Cubit<DoctorListState> {
   static DoctorListCubit get(context) => BlocProvider.of(context);
   String? dropDownMenuItemValue;
   TextEditingController searchController = TextEditingController();
-  List<DoctorModel> doctorsList = [];
-  List<DoctorModel> searchDoctorList = [];
+  List<ContractorModel> doctorsList = [];
+  List<ContractorModel> searchDoctorList = [];
 
   void changeDropDownItem(value) {
     doctorsList.clear();
@@ -25,7 +25,7 @@ class DoctorListCubit extends Cubit<DoctorListState> {
     if (value != 'All') {
       FirebaseFirestore.instance.collection('doctors').where('speciality', isEqualTo: value).get().then((value) {
         for (var element in value.docs) {
-          doctorsList.add(DoctorModel.fromJson(element.data()));
+          doctorsList.add(ContractorModel.fromJson(element.data()));
         }
         emit(GetDoctorBySpecialitySuccessfully());
       }).catchError((onError) {
@@ -35,7 +35,7 @@ class DoctorListCubit extends Cubit<DoctorListState> {
     } else {
       FirebaseFirestore.instance.collection('doctors').get().then((value) {
         for (var element in value.docs) {
-          doctorsList.add(DoctorModel.fromJson(element.data()));
+          doctorsList.add(ContractorModel.fromJson(element.data()));
         }
         emit(GetDoctorBySpecialitySuccessfully());
       }).catchError((onError) {
@@ -50,7 +50,7 @@ class DoctorListCubit extends Cubit<DoctorListState> {
     FirebaseFirestore.instance.collection('doctors').snapshots().listen((value) {
       doctorsList.clear();
       for (var element in value.docs) {
-        doctorsList.add(DoctorModel.fromJson(element.data()));
+        doctorsList.add(ContractorModel.fromJson(element.data()));
       }
       emit(GetAllDoctorsSuccessfully());
     });
@@ -58,7 +58,7 @@ class DoctorListCubit extends Cubit<DoctorListState> {
 
   void searchDoctors(String value) {
     searchDoctorList = [];
-    for (DoctorModel pharmacy in doctorsList) {
+    for (ContractorModel pharmacy in doctorsList) {
       if (pharmacy.name!.toLowerCase().contains(value.toLowerCase())) {
         searchDoctorList.add(pharmacy);
         emit(IsSearchingInMedicineInCategory());

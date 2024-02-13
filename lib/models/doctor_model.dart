@@ -1,11 +1,11 @@
-class DoctorModel {
+class ContractorModel {
   String? id;
   String? name;
   String? phoneNo;
   String? speciality;
   String? lastMessage;
 
-  DoctorModel(
+  ContractorModel(
     this.id,
     this.name,
     this.phoneNo,
@@ -16,8 +16,8 @@ class DoctorModel {
         'name': name,
         'phoneNo': phoneNo,
         'speciality': speciality,
-      };
-  DoctorModel.fromJson(Map<String, dynamic>? json, {this.lastMessage}) {
+  };
+  ContractorModel.fromJson(Map<String, dynamic>? json, {this.lastMessage}) {
     id = json!['id'];
     name = json['name'];
     phoneNo = json['phoneNo'];

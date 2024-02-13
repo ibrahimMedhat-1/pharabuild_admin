@@ -34,7 +34,7 @@ class SearchWidget extends StatelessWidget {
                       contentPadding: const EdgeInsets.all(11),
                       fillColor: Colors.white,
                       filled: true,
-                      labelText: 'Address, city, state...',
+                      labelText: 'Contactor Name ..',
                       labelStyle: Theme.of(context).textTheme.bodySmall,
                       prefixIcon: const Icon(
                         Icons.search,

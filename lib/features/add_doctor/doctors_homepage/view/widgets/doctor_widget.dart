@@ -1,11 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../../models/doctor_model.dart';
 import '../doctor_details.dart';
 
 class DoctorListWidget extends StatelessWidget {
-  final List<DoctorModel> doctors;
+  final List<ContractorModel> doctors;
 
   const DoctorListWidget({required this.doctors, super.key});
 
