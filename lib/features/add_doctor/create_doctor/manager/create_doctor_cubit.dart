@@ -87,6 +87,7 @@ class CreateDoctorCubit extends Cubit<CreateDoctorState> {
         ).toMap())
         .then((value) {
       emit(AddDoctorDataSuccessfully());
+      showToast("Contractor Created");
       Navigator.pop(context);
     });
   }

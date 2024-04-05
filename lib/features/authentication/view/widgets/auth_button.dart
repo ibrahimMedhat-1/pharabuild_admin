@@ -22,7 +22,7 @@ class AuthButton extends StatelessWidget {
         minWidth: MediaQuery.of(context).size.width * 0.35,
         height: MediaQuery.of(context).size.width * 0.13,
         elevation: 3,
-        color: Colors.blueAccent,
+        color: Color(0xFF004AAD),
         textColor: Colors.white,
         child: Text(
           text,

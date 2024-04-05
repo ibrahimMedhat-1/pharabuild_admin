@@ -51,11 +51,12 @@ class LoginPage extends StatelessWidget {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Image.asset(
-                                ImagesAsset.pharmacyLogo,
+                                "assets/logos/Home Build Construction Logo (8).png",
                                 scale: 10,
                               ),
+                              const SizedBox(width: 5,),
                               Text(
-                                "Intelligent Pharmacy",
+                                "PharaBuild Admin",
                                 style: Theme.of(context).textTheme.titleLarge!,
                               )
                             ],

@@ -32,10 +32,13 @@ class RegisterDoctor extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton(
+                  style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(Color(0xFF004AAD))
+                  ),
                   onPressed: () {
                     cubit.registerDoctor(context);
                   },
-                  child: const Text('Register Pharmacy'),
+                  child: const Text('Register Contractor',style: TextStyle(color: Colors.white)),
                 )
               ],
             ),

@@ -41,7 +41,7 @@ class SearchWidget extends StatelessWidget {
                         color: Colors.grey,
                       ),
                       suffixIcon: MaterialButton(
-                        color: Colors.blue,
+                        color: Color(0xFF004AAD),
                         textColor: Colors.white,
                         onPressed: () {
                           search();
@@ -69,10 +69,10 @@ class SearchWidget extends StatelessWidget {
         MaterialButton(
           minWidth: 70,
           padding: const EdgeInsets.all(5),
-          shape: const CircleBorder(side: BorderSide(color: Colors.blueAccent)),
+          shape: const CircleBorder(side: BorderSide(color:Color(0xFF004AAD))),
           child: const Icon(
             Icons.add,
-            color: Colors.blue,
+            color: Color(0xFF004AAD),
           ),
           onPressed: () {
             addButtonOnPressed();

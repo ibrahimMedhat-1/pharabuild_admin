@@ -41,10 +41,13 @@ class AddDoctorData extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   ElevatedButton(
+                      style: const ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll(Color(0xFF004AAD))
+                      ),
                       onPressed: () {
                         cubit.addDoctorData(context);
                       },
-                      child: const Text('Create Contractor'))
+                      child: const Text('Create Contractor',style: TextStyle(color: Colors.white)))
                 ],
               ),
             ),

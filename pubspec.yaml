@@ -40,6 +40,7 @@ dependencies:
   url_launcher:
   bloc:
   flutter_bloc:
+  flutter_launcher_icons: ^0.13.1
   flutter:
     sdk: flutter
 
@@ -47,6 +48,10 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logos/Home Build Construction Logo (8).png"
 
 dev_dependencies:
   flutter_test:
