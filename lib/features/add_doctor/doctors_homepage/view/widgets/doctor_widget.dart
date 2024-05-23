@@ -27,7 +27,7 @@ class DoctorListWidget extends StatelessWidget {
         child: Hero(
           tag: doctors[index].id!,
           child: AspectRatio(
-            aspectRatio: 2.1 / 1.1,
+            aspectRatio: 2.1 / 1.18,
             child: Container(
               width: double.infinity,
               margin: const EdgeInsets.all(20),
@@ -47,7 +47,6 @@ class DoctorListWidget extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
                     Text(
                       doctors[index].name ?? '',
                       style: Theme.of(context).textTheme.titleLarge!.copyWith(height: 2),
@@ -74,7 +73,6 @@ class DoctorListWidget extends StatelessWidget {
                     //     ),
                     //   ),
                     // ),
-
                   ],
                 ),
               ),
